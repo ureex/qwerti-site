@@ -1,73 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Qwerti — Swap & Bridge</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Qwerti — Swap</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 body {
+  margin:0;
+  font-family:'Syne',sans-serif;
   background:#050810;
   color:#e8f4ff;
-  font-family:'Syne',sans-serif;
-  margin:0;
 }
 
 /* NAV */
 nav {
   display:flex;
   justify-content:space-between;
-  padding:20px;
+  padding:20px 30px;
 }
 .logo {font-weight:800;}
+nav a {color:#63d2ff;text-decoration:none;}
 
 /* HERO */
 #hero {
   text-align:center;
-  padding:100px 20px;
+  padding:80px 20px 20px;
 }
+#hero h1 {font-size:2.5rem;margin-bottom:10px;}
+#hero p {color:#6b8caa;}
 
-/* WIDGET CARD */
-.widget-frame {
-  max-width:700px;
+/* SWAP CARD */
+.swap-card {
+  max-width:420px;
   margin:40px auto;
-  padding:25px;
-  border-radius:20px;
-  background:rgba(12,17,32,0.85);
-  border:1px solid rgba(99,210,255,0.2);
-  box-shadow:0 0 40px rgba(99,210,255,.1);
+  padding:20px;
+  border-radius:18px;
+  background:rgba(12,17,32,0.9);
+  border:1px solid rgba(99,210,255,.2);
+  box-shadow:0 0 40px rgba(99,210,255,.08);
 }
 
-/* BUY BUTTON */
-.buy-btn {
-  display:block;
-  text-align:center;
-  margin-bottom:20px;
+/* TOKEN BOX */
+.token-box {
+  background:#050810;
   padding:14px;
   border-radius:10px;
+  margin-bottom:12px;
+}
+
+.token-label {
+  font-size:.75rem;
+  color:#6b8caa;
+}
+
+.token-name {
+  font-weight:700;
+  font-size:1.1rem;
+}
+
+/* INPUT */
+input {
+  width:100%;
+  padding:14px;
+  border-radius:10px;
+  border:none;
+  background:#050810;
+  color:white;
+  margin:15px 0;
+  font-size:1rem;
+}
+
+/* BUTTON */
+.swap-btn {
+  display:block;
+  text-align:center;
+  padding:14px;
+  border-radius:12px;
   font-weight:800;
   text-decoration:none;
   color:#050810;
   background:linear-gradient(135deg,#63d2ff,#a06cff);
-  box-shadow:0 0 20px rgba(99,210,255,.4);
+  box-shadow:0 0 20px rgba(99,210,255,.3);
   transition:.2s;
 }
-.buy-btn:hover {
+.swap-btn:hover {
   transform:translateY(-2px);
   opacity:.9;
 }
 
-/* iframe */
-.qwerti-iframe {
-  width:100%;
-  height:600px;
-  border:none;
-  border-radius:12px;
-}
-
-/* footer */
+/* FOOTER */
 footer {
   text-align:center;
   padding:40px;
@@ -80,31 +104,40 @@ footer {
 
 <nav>
   <div class="logo">Qwerti.ai</div>
-  <div><a href="#swap" style="color:#63d2ff;">Swap</a></div>
+  <a href="#swap">Swap</a>
 </nav>
 
 <section id="hero">
   <h1>Swap & Bridge</h1>
-  <p>Fast cross-chain swaps powered by Qwerti</p>
+  <p>Buy your token instantly using Qwerti</p>
 </section>
 
+<!-- 🔥 SWAP UI -->
 <section id="swap">
-  <div class="widget-frame">
+  <div class="swap-card">
 
-    <!-- 🔥 YOUR REFERRAL BUTTON -->
+    <div class="token-box">
+      <div class="token-label">From</div>
+      <div class="token-name">ETH</div>
+    </div>
+
+    <div style="text-align:center;margin:10px 0;">↓</div>
+
+    <div class="token-box">
+      <div class="token-label">To</div>
+      <div class="token-name">Your Token</div>
+    </div>
+
+    <input type="number" placeholder="Enter amount">
+
+    <!-- 🔥 REFERRAL LINK -->
     <a 
       href="https://app.qwerti.ai/buy/0x311935cd80b76769bf2ecc9d8ab7635b2139cf82/8453?campaign=sol-8453-36545"
       target="_blank"
-      class="buy-btn"
+      class="swap-btn"
     >
-      🚀 Buy / Sell This Token
+      🚀 Swap Now
     </a>
-
-    <!-- 👇 EMBED FOR UI -->
-    <iframe 
-      class="qwerti-iframe"
-      src="https://app.qwerti.ai"
-    ></iframe>
 
   </div>
 </section>

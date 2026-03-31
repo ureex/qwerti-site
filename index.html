@@ -603,6 +603,26 @@
     const script = document.createElement("script");
     script.src = "https://widget.qwerti.ai/buy.js";
 
+    <script>
+  window.addEventListener("load", function () {
+    const container = document.getElementById("qwerti-widget-container");
+
+    // If widget didn't load, force reload
+    if (!container || container.innerHTML.trim() === "") {
+      const script = document.createElement("script");
+      script.src = "https://widget.qwerti.ai/buy.js";
+
+      script.setAttribute("data-widget", "qwerti-widget");
+      script.setAttribute("data-token", "0x311935cd80b76769bf2ecc9d8ab7635b2139cf82");
+      script.setAttribute("data-chain", "8453");
+      script.setAttribute("data-campaign", "sol-8453-36545");
+      script.setAttribute("data-container", "qwerti-widget-container");
+
+      document.body.appendChild(script);
+    }
+  });
+</script>
+
     script.setAttribute("data-widget", "qwerti-widget");
     script.setAttribute("data-token", "0x311935cd80b76769bf2ecc9d8ab7635b2139cf82");
     script.setAttribute("data-chain", "8453");

@@ -32,18 +32,25 @@ body {
   overflow-x: hidden;
 }
 
-/* ✅ WIDGET FIX (added here) */
-#qwerti-widget-container {
-  min-height: 500px;
-  width: 100%;
-}
-#qwerti-widget-container iframe {
-  width: 100% !important;
-  min-height: 500px !important;
-  display: block !important;
+/* Widget container */
+.widget-frame {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 20px;
+  max-width: 700px;
+  margin: 60px auto;
 }
 
-/* simple layout (rest unchanged) */
+/* iframe fix */
+.qwerti-iframe {
+  width: 100%;
+  height: 600px;
+  border: none;
+  border-radius: 12px;
+}
+
+/* simple layout */
 nav {
   display:flex;
   justify-content:space-between;
@@ -55,14 +62,6 @@ nav {
 #hero {
   text-align:center;
   padding:120px 20px;
-}
-
-.widget-frame {
-  border:1px solid var(--border);
-  border-radius:20px;
-  padding:20px;
-  margin:40px auto;
-  max-width:600px;
 }
 
 footer {
@@ -86,34 +85,22 @@ footer {
   <p>Fast cross-chain swaps powered by Qwerti</p>
 </section>
 
+<!-- ✅ WORKING WIDGET SECTION -->
 <section id="swap">
   <div class="widget-frame">
-    <div id="qwerti-widget-container"></div>
+    
+    <iframe 
+      class="qwerti-iframe"
+      src="https://app.qwerti.ai/buy/0x311935cd80b76769bf2ecc9d8ab7635b2139cf82/8453?campaign=sol-8453-36545"
+      allow="clipboard-write"
+    ></iframe>
+
   </div>
 </section>
 
 <footer>
-  Qwerti.ai
+  Qwerti.ai — Swap & Bridge
 </footer>
-
-<!-- ✅ FIXED WIDGET SCRIPT -->
-<script>
-window.addEventListener("load", function () {
-  const container = document.getElementById("qwerti-widget-container");
-  if (!container) return;
-
-  const script = document.createElement("script");
-  script.src = "https://widget.qwerti.ai/buy.js";
-
-  script.setAttribute("data-widget", "qwerti-widget");
-  script.setAttribute("data-token", "0x311935cd80b76769bf2ecc9d8ab7635b2139cf82");
-  script.setAttribute("data-chain", "8453");
-  script.setAttribute("data-campaign", "sol-8453-36545");
-  script.setAttribute("data-container", "qwerti-widget-container");
-
-  document.body.appendChild(script);
-});
-</script>
 
 </body>
 </html>

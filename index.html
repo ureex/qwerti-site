@@ -5,68 +5,73 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Qwerti — Swap & Bridge</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-:root {
-  --bg:#050810;
-  --surface:#0c1120;
-  --border:rgba(99,210,255,0.13);
-  --glow:#63d2ff;
-  --glow2:#a06cff;
-  --accent:#00f5c4;
-  --text:#e8f4ff;
-  --muted:#6b8caa;
-  --card:rgba(12,17,32,0.85);
-}
-
 body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: 'Syne', sans-serif;
-  min-height: 100vh;
-  overflow-x: hidden;
+  background:#050810;
+  color:#e8f4ff;
+  font-family:'Syne',sans-serif;
+  margin:0;
 }
 
-/* Widget container */
-.widget-frame {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 20px;
-  max-width: 700px;
-  margin: 60px auto;
-}
-
-/* iframe fix */
-.qwerti-iframe {
-  width: 100%;
-  height: 600px;
-  border: none;
-  border-radius: 12px;
-}
-
-/* simple layout */
+/* NAV */
 nav {
   display:flex;
   justify-content:space-between;
-  padding:1rem 2rem;
+  padding:20px;
 }
 .logo {font-weight:800;}
-.nav-links {display:flex;gap:1rem;}
 
+/* HERO */
 #hero {
   text-align:center;
-  padding:120px 20px;
+  padding:100px 20px;
 }
 
+/* WIDGET CARD */
+.widget-frame {
+  max-width:700px;
+  margin:40px auto;
+  padding:25px;
+  border-radius:20px;
+  background:rgba(12,17,32,0.85);
+  border:1px solid rgba(99,210,255,0.2);
+  box-shadow:0 0 40px rgba(99,210,255,.1);
+}
+
+/* BUY BUTTON */
+.buy-btn {
+  display:block;
+  text-align:center;
+  margin-bottom:20px;
+  padding:14px;
+  border-radius:10px;
+  font-weight:800;
+  text-decoration:none;
+  color:#050810;
+  background:linear-gradient(135deg,#63d2ff,#a06cff);
+  box-shadow:0 0 20px rgba(99,210,255,.4);
+  transition:.2s;
+}
+.buy-btn:hover {
+  transform:translateY(-2px);
+  opacity:.9;
+}
+
+/* iframe */
+.qwerti-iframe {
+  width:100%;
+  height:600px;
+  border:none;
+  border-radius:12px;
+}
+
+/* footer */
 footer {
   text-align:center;
   padding:40px;
+  color:#6b8caa;
 }
 </style>
 </head>
@@ -75,9 +80,7 @@ footer {
 
 <nav>
   <div class="logo">Qwerti.ai</div>
-  <div class="nav-links">
-    <a href="#swap">Swap</a>
-  </div>
+  <div><a href="#swap" style="color:#63d2ff;">Swap</a></div>
 </nav>
 
 <section id="hero">
@@ -85,21 +88,29 @@ footer {
   <p>Fast cross-chain swaps powered by Qwerti</p>
 </section>
 
-<!-- ✅ WORKING WIDGET SECTION -->
 <section id="swap">
   <div class="widget-frame">
-    
+
+    <!-- 🔥 YOUR REFERRAL BUTTON -->
+    <a 
+      href="https://app.qwerti.ai/buy/0x311935cd80b76769bf2ecc9d8ab7635b2139cf82/8453?campaign=sol-8453-36545"
+      target="_blank"
+      class="buy-btn"
+    >
+      🚀 Buy / Sell This Token
+    </a>
+
+    <!-- 👇 EMBED FOR UI -->
     <iframe 
       class="qwerti-iframe"
-      src="https://app.qwerti.ai/buy/0x311935cd80b76769bf2ecc9d8ab7635b2139cf82/8453?campaign=sol-8453-36545"
-      allow="clipboard-write"
+      src="https://app.qwerti.ai"
     ></iframe>
 
   </div>
 </section>
 
 <footer>
-  Qwerti.ai — Swap & Bridge
+Qwerti.ai — Swap & Bridge
 </footer>
 
 </body>
